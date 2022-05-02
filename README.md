@@ -25,5 +25,11 @@ module:
       mounts:
         - source: static/assets/fonts/zilla-slab
           target: static/assets/fonts/zilla-slab
+## Verwendet SCRATCH_JS:
+        - source:           node_modules/venobox/dist/venobox.min.js
+          target:           assets/js/venobox/venobox.min.js
+## Verwendet SCRATCH_CSS:
+        - source:           node_modules/venobox/dist/venobox.min.css
+          target:           assets/css/venobox/venobox.min.css
 --- AND SO ON ---
 ```
