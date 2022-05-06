@@ -18,6 +18,9 @@ Used/Mounted in repo hugo_docsghsvs.
 Create a versioned release even if I don't know yet whether that makes sense or not. I dream of imports of specific versions.
 
 ## Import in "mother" repo
+...  whatever you need.
+
+Example:
 ```
 module:
   imports:
@@ -26,10 +29,20 @@ module:
         - source: static/assets/fonts/zilla-slab
           target: static/assets/fonts/zilla-slab
 ## Verwendet SCRATCH_JS:
-        - source:           node_modules/venobox/dist/venobox.min.js
-          target:           assets/js/venobox/venobox.min.js
+        - source: node_modules/venobox/dist/venobox.min.js
+          target: assets/js/venobox/venobox.min.js
 ## Verwendet SCRATCH_CSS:
-        - source:           node_modules/venobox/dist/venobox.min.css
-          target:           assets/css/venobox/venobox.min.css
+        - source: node_modules/venobox/dist/venobox.min.css
+          target: assets/css/venobox/venobox.min.css
+        #- source: node_modules/bootstrap/dist/css
+          #target: assets/css/bootstrap
+        - source: node_modules/bootstrap/dist/js
+          target: assets/js/bootstrap
+        - source: node_modules/anchor-js/anchor.min.js
+          target: assets/js/vendor/anchor.min.js
+        - source: node_modules/clipboard/dist/clipboard.min.js
+          target: assets/js/vendor/clipboard.min.js
+        - source: things/js/back-to-top.min.js
+          target: assets/js/loadafter/backtotop.js
 --- AND SO ON ---
 ```
