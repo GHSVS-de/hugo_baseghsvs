@@ -20,7 +20,7 @@ Create a versioned release even if I don't know yet whether that makes sense or 
 ## Import in "mother" repo
 ...  whatever you need.
 
-Example:
+### My private example:
 ```
 module:
   imports:
@@ -28,14 +28,14 @@ module:
       mounts:
         - source: static/assets/fonts/zilla-slab
           target: static/assets/fonts/zilla-slab
-## Verwendet SCRATCH_JS:
+          ## Verwendet SCRATCH_JS:
         - source: node_modules/venobox/dist/venobox.min.js
           target: assets/js/venobox/venobox.min.js
-## Verwendet SCRATCH_CSS:
+          ## Verwendet SCRATCH_CSS:
         - source: node_modules/venobox/dist/venobox.min.css
           target: assets/css/venobox/venobox.min.css
-        #- source: node_modules/bootstrap/dist/css
-          #target: assets/css/bootstrap
+        - source: node_modules/bootstrap/scss
+          target: assets/scss/bootstrap
         - source: node_modules/bootstrap/dist/js
           target: assets/js/bootstrap
         - source: node_modules/anchor-js/anchor.min.js
@@ -46,3 +46,6 @@ module:
           target: assets/js/loadafter/backtotop.js
 --- AND SO ON ---
 ```
+
+#### Warning
+If you use `node_modules/bootstrap/scss` see bug fix at https://discourse.gohugo.io/t/tocss-error-during-compilation-from-mounted-repository-folder-name-vendor-vs-vendorix/38499/4
