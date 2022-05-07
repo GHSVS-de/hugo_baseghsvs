@@ -15,7 +15,21 @@ Used/Mounted in repo hugo_docsghsvs.
 - `npm run updateCheck` or (faster) `npm outdated`
 - `npm run update` (if needed) or (faster) `npm update --save-dev`
 
+## Folder /custom/
+Is for fonts and custom JavaScript.
+
+Can be extended for other custom asset kinds.
+
+Already existing folders should not be deleted. Just delete files in it if you don't need them anymore.
+
+## Build /dist/ folder
+- `node build.js`
+- This folder contains all mounteable sources then. They come from /custom/ and /node_modules/.
+
+## ????
 Create a versioned release even if I don't know yet whether that makes sense or not. I dream of imports of specific versions.
+
+---
 
 ## Import in "mother" repo
 ...  whatever you need.
