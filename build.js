@@ -10,7 +10,7 @@ const {
 } = require("./package.json");
 
 const source = `./node_modules`;
-const target = `./vendors`;
+const target = `./dist`;
 
 // Just easier to handle in console.log:
 let from = '';
@@ -21,7 +21,6 @@ let targetDir = '';
 {
 	let cleanOuts = [
 		target,
-		'./dist'
 	];
 	await helper.cleanOut(cleanOuts);
 
@@ -30,8 +29,27 @@ let targetDir = '';
 		answer => console.log(pc.yellow(pc.bold(`Created "${to}".`)))
 	);
 
+	// Subfolders to dist.
+	from = './custom';
+	to = path.join(target);
+	await fse.copy(from, to
+	).then(
+		answer => console.log(
+			pc.yellow(pc.bold(`Copied "${from}" to "${to}".`))
+		)
+	);
+
 	// JAVASCRIPT STARTS HERE.
 	targetDir = 'js';
+
+	from = './custom/js';
+	to = path.join(target, targetDir);
+	await fse.copy(from, to
+	).then(
+		answer => console.log(
+			pc.yellow(pc.bold(`Copied "${from}" to "${to}".`))
+		)
+	);
 
 	from = path.join(source, 'venobox/dist/venobox.min.js');
 	to = path.join(target, targetDir, 'venobox/venobox.min.js');
@@ -91,33 +109,5 @@ let targetDir = '';
 		answer => console.log(
 			pc.yellow(pc.bold(`Copied "${from}" to "${to}".`))
 		)
-	);
-
-	// ./dist STARTS HERE.
-	targetDir = './dist';
-	await fse.mkdir(targetDir).then(
-		answer => console.log(pc.yellow(pc.bold(`Created "${targetDir}".`)))
-	);
-
-	for (const folder of ['./custom', './vendors', './fonts'])
-	{
-		from = folder;
-		to = path.join(targetDir, from);
-		await fse.copy(from, to
-		).then(
-			answer => console.log(
-				pc.yellow(pc.bold(`Copied "${from}" to "${to}".`))
-			)
-		);
-	}
-
-	// process.exit(1);
-
-	cleanOuts = [
-		target,
-	];
-	await helper.cleanOut(cleanOuts).then(
-		answer => console.log(pc.cyan(pc.bold(pc.bgRed(
-			`Finished. Good bye!`))))
 	);
 })();
