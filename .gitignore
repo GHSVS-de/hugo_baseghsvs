@@ -1,7 +1,5 @@
 node_modules/
 custom/
-fonts/
-vendors/
 
 .DS_Store
 _notes/
