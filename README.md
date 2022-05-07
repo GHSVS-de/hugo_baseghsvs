@@ -44,6 +44,8 @@ module:
           target: assets/js/clipboard.min.js
         - source: dist/js/back-to-top.min.js
           target: assets/js/loadafter/backtotop.js
+        - source: dist/js/application.js
+          target: assets/js/loadafter/application.js
 --- AND SO ON ---
 ```
 
