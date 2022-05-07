@@ -10,7 +10,7 @@ const {
 } = require("./package.json");
 
 const source = `./node_modules`;
-const target = `./vendor`;
+const target = `./vendors`;
 
 // Just easier to handle in console.log:
 let from = '';
@@ -99,7 +99,7 @@ let targetDir = '';
 		answer => console.log(pc.yellow(pc.bold(`Created "${targetDir}".`)))
 	);
 
-	for (const folder of ['./custom', './vendor', './fonts'])
+	for (const folder of ['./custom', './vendors', './fonts'])
 	{
 		from = folder;
 		to = path.join(targetDir, from);
