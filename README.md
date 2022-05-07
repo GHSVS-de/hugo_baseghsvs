@@ -26,26 +26,26 @@ module:
   imports:
     - path: github.com/GHSVS-de/hugo_baseghsvs
       mounts:
-        - source: static/assets/fonts/zilla-slab
+        - source: dist/fonts/zilla-slab
           target: static/assets/fonts/zilla-slab
           ## Verwendet SCRATCH_JS:
-        - source: node_modules/venobox/dist/venobox.min.js
+        - source: dist/js/venobox/venobox.min.js
           target: assets/js/venobox/venobox.min.js
           ## Verwendet SCRATCH_CSS:
-        - source: node_modules/venobox/dist/venobox.min.css
-          target: assets/css/venobox/venobox.min.css
-        - source: node_modules/bootstrap/scss
+        - source: dist/css/venobox/venobox.min.css
+          target: assets/css/venobox/venobox.css
+        - source: dist/scss/bootstrap
           target: assets/scss/bootstrap
-        - source: node_modules/bootstrap/dist/js
+        - source: dist/js/bootstrap
           target: assets/js/bootstrap
-        - source: node_modules/anchor-js/anchor.min.js
-          target: assets/js/vendor/anchor.min.js
-        - source: node_modules/clipboard/dist/clipboard.min.js
-          target: assets/js/vendor/clipboard.min.js
-        - source: things/js/back-to-top.min.js
+        - source: dist/js/anchor-js/anchor.min.js
+          target: assets/js/anchor.js
+        - source: dist/js/clipboard/clipboard.min.js
+          target: assets/js/clipboard.min.js
+        - source: dist/js/back-to-top.min.js
           target: assets/js/loadafter/backtotop.js
 --- AND SO ON ---
 ```
 
 #### Warning
-If you use `node_modules/bootstrap/scss` see bug fix at https://discourse.gohugo.io/t/tocss-error-during-compilation-from-mounted-repository-folder-name-vendor-vs-vendorix/38499/4
+If you use `dist/scss/bootstrap` see bug fix at https://discourse.gohugo.io/t/tocss-error-during-compilation-from-mounted-repository-folder-name-vendor-vs-vendorix/38499/4
