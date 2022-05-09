@@ -12,6 +12,9 @@ const {
 const source = `./node_modules`;
 const target = `./dist`;
 
+// Get svgs from external repo.
+const svgsBi = '../pkg_file_iconsghsvs/media/svgs/bi';
+
 // Just easier to handle in console.log:
 let from = '';
 let to = '';
@@ -104,6 +107,18 @@ let targetDir = '';
 
 	from = path.join(source, 'bootstrap/scss');
 	to = path.join(target, targetDir, 'bootstrap');
+	await fse.copy(from, to
+	).then(
+		answer => console.log(
+			pc.yellow(pc.bold(`Copied "${from}" to "${to}".`))
+		)
+	);
+
+	// SVGS STARTS HERE.
+	targetDir = 'svgs';
+
+	from = svgsBi;
+	to = path.join(target, targetDir, 'bi');
 	await fse.copy(from, to
 	).then(
 		answer => console.log(
