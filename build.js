@@ -13,7 +13,7 @@ const source = `./node_modules`;
 const target = `./dist`;
 
 // Get svgs from external repo.
-const svgsBi = '../pkg_file_iconsghsvs/media/svgs/bi';
+const svgs = '../pkg_file_iconsghsvs/media/svgs';
 
 // Just easier to handle in console.log:
 let from = '';
@@ -117,8 +117,17 @@ let targetDir = '';
 	// SVGS STARTS HERE.
 	targetDir = 'svgs';
 
-	from = svgsBi;
+	from = `${svgs}/bi`;
 	to = path.join(target, targetDir, 'bi');
+	await fse.copy(from, to
+	).then(
+		answer => console.log(
+			pc.yellow(pc.bold(`Copied "${from}" to "${to}".`))
+		)
+	);
+
+	from = `${svgs}/icons-overview.html`;
+	to = path.join(target, targetDir, 'icons-overview.html');
 	await fse.copy(from, to
 	).then(
 		answer => console.log(
