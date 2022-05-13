@@ -40,26 +40,38 @@ module:
   imports:
     - path: github.com/GHSVS-de/hugo_baseghsvs
       mounts:
+        - source: dist/svgs/bi
+          target: layouts/partials/bi
+        - source: dist/svgs/icons-overview.html
+          target: assets/mounted/icons-overview.html
+
         - source: dist/fonts/zilla-slab
           target: static/assets/fonts/zilla-slab
+
           ## Verwendet SCRATCH_JS:
         - source: dist/js/venobox/venobox.min.js
           target: assets/js/venobox/venobox.min.js
+
           ## Verwendet SCRATCH_CSS:
         - source: dist/css/venobox/venobox.min.css
           target: assets/css/venobox/venobox.css
+
         - source: dist/scss/bootstrap
           target: assets/scss/bootstrap
+
         - source: dist/js/bootstrap
           target: assets/js/bootstrap
+
         - source: dist/js/anchor-js/anchor.min.js
           target: assets/js/anchor.js
+
         - source: dist/js/clipboard/clipboard.min.js
           target: assets/js/clipboard.min.js
-        - source: dist/js/back-to-top.min.js
-          target: assets/js/loadafter/backtotop.js
+
         - source: dist/js/application.js
           target: assets/js/loadafter/application.js
+        - source: dist/js/back-to-top.min.js
+          target: assets/js/loadafter/backtotop.js
 --- AND SO ON ---
 ```
 
