@@ -1,0 +1,47 @@
+// stylelint-disable selector-max-type
+
+.bd-toc {
+  @include media-breakpoint-up(lg) {
+    position: sticky;
+    top: 5rem;
+    right: 0;
+    z-index: 2;
+    height: subtract(100vh, 7rem);
+    overflow-y: auto;
+  }
+
+  nav {
+    // @include font-size(.875rem);
+
+    ul {
+      padding-left: 0;
+      list-style: none;
+
+      ul {
+        padding-left: .4rem;
+        margin-top: .25rem;
+				@include font-size(.9rem);
+				text-transform: none;
+      }
+    }
+
+    li {
+      margin-bottom: .25rem;
+
+    }
+
+    a {
+      color: inherit;
+			border-bottom: 1px solid $red;
+			display: block;
+
+      &:not(:hover) {
+        text-decoration: none;
+      }
+
+      code {
+        font: inherit;
+      }
+    }
+  }
+}

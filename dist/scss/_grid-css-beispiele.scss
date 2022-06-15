@@ -1,0 +1,29 @@
+// hugo_docsghsvs\site\_myCodes\grid-css\0001_frVersusProzente
+.outerContainer1
+{
+	width: 100%;
+	overflow: scroll;
+	background-color: white;;
+}
+.column1
+{
+	background-color: lightgreen;
+	border: 1px solid black;
+}
+/* Beide 50% uuund zusätzlich noch Abstand dazwischen. */
+.gridContainer1
+{
+	display: grid;
+	width: 100%;
+	grid-template-columns: repeat(2, 50%);
+	grid-template-rows: repeat(2 300px);
+	grid-gap: 10px;
+}
+/* Beide 1fr uuund zusätzlich noch Abstand dazwischen. */
+.gridContainer2
+{
+	display: grid;
+	width: 100%;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 10px;
+}

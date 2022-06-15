@@ -1,13 +1,14 @@
-const fse = require('fs-extra');
-const pc = require('picocolors');
+#!/usr/bin/env node
 const path = require('path');
-const helper = require('./build/helper.js');
 
-const {
-	filename,
-	name,
-	version,
-} = require("./package.json");
+/* Configure START */
+const pathBuildKram = path.resolve("../buildKramGhsvs");
+/* Configure END */
+
+const helper = require(`${pathBuildKram}/build/helper.js`);
+
+const pc = require(`${pathBuildKram}/node_modules/picocolors`);
+const fse = require(`${pathBuildKram}/node_modules/fs-extra`);
 
 const source = `./node_modules`;
 const target = `./dist`;
@@ -104,6 +105,15 @@ let targetDir = '';
 
 	// SCSS STARTS HERE.
 	targetDir = 'scss';
+
+	from = './custom/scss';
+	to = path.join(target, targetDir);
+	await fse.copy(from, to
+	).then(
+		answer => console.log(
+			pc.yellow(pc.bold(`Copied "${from}" to "${to}".`))
+		)
+	);
 
 	from = path.join(source, 'bootstrap/scss');
 	to = path.join(target, targetDir, 'bootstrap');

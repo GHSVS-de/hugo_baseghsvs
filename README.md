@@ -5,6 +5,9 @@ Used/Mounted in repo hugo_docsghsvs.
 ---
 
 # My personal build procedure
+
+**Build procedure uses local repo fork of https://github.com/GHSVS-de/buildKramGhsvs**
+
 - Prepare/adapt `./package.json`.
 
 - `cd /mnt/z/git-kram/hugo_baseghsvs`
@@ -49,15 +52,20 @@ module:
           target: static/assets/fonts/zilla-slab
 
           ## Verwendet SCRATCH_JS:
-        - source: dist/js/venobox/venobox.min.js
-          target: assets/js/venobox/venobox.min.js
+        #- source: dist/js/venobox/venobox.min.js
+        #  target: assets/js/venobox/venobox.min.js
+        - source: dist/js/venobox
+          target: assets/js/venobox
 
           ## Verwendet SCRATCH_CSS:
         - source: dist/css/venobox/venobox.min.css
           target: assets/css/venobox/venobox.css
 
-        - source: dist/scss/bootstrap
-          target: assets/scss/bootstrap
+        #- source: dist/scss/bootstrap
+        #  target: assets/scss/bootstrap
+
+        - source: dist/scss
+          target: assets/scss
 
         - source: dist/js/bootstrap
           target: assets/js/bootstrap
