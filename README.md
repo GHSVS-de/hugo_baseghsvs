@@ -1,6 +1,8 @@
 # hugo_baseghsvs
 
-Used/Mounted in repo hugo_docsghsvs.
+Used/Mounted in repo hugo_docsghsvs and other Hugo projects.
+
+Don't rely on B\C!
 
 ---
 
@@ -19,7 +21,7 @@ Used/Mounted in repo hugo_docsghsvs.
 - `npm run update` (if needed) or (faster) `npm update --save-dev`
 
 ## Folder /custom/
-Is for fonts and custom JavaScript.
+Is for fonts, custom JavaScript and other custom stuff.
 
 Can be extended for other custom asset kinds.
 
