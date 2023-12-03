@@ -47,10 +47,23 @@ q
   > h2:not(:first-child) {
     margin-top: 1.75rem;
   }
-
+  > h2 {
+    border-bottom: 1px solid var(--bs-gray-600);
+		border-top: 1px solid var(--bs-gray-600);
+		padding: .5rem 1rem;
+		margin-bottom: 1rem;
+  }
   > h3 {
     margin-top: 1.5rem;
   }
+
+	// Übersichtsseiten (Blogs) aausschließen durch >
+	> .block-summary
+	{
+		@extend .fst-italic;
+		@extend .fs-5;
+	}
+
 }
 
 .codeCaption, .tableCaption
