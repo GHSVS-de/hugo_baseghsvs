@@ -1,0 +1,277 @@
+h1, h2
+{
+	font-family: $font-family-custom;
+}
+
+q
+{
+	font-style: italic;
+	font-family: $font-family-custom;
+}
+
+.text-purple
+{
+	color: $purple !important;
+}
+.bd-title
+{
+	//word-break: break-all;
+	@include font-size(2rem);
+}
+
+.bd-intro,
+.bd-content
+{
+	hyphens: auto;
+}
+.bd-content
+{
+	button,
+	td code
+	{
+		hyphens: none;
+	}
+
+	a
+	{
+		word-break: break-all;
+
+		&:hover, &:focus, &:active
+		{
+			outline-style: dashed;
+			outline-width: 2px;
+			outline-color: $red;
+		}
+	}
+
+  > h2:not(:first-child) {
+    margin-top: 1.75rem;
+  }
+  > h2 {
+    border-bottom: 1px solid var(--bs-gray-600);
+		border-top: 1px solid var(--bs-gray-600);
+		padding: .5rem 1rem;
+		margin-bottom: 1rem;
+  }
+  > h3 {
+    margin-top: 1.5rem;
+  }
+
+	// Übersichtsseiten (Blogs) aausschließen durch >
+	> .block-summary
+	{
+		@extend .fst-italic;
+		@extend .fs-5;
+	}
+
+}
+
+.codeCaption, .tableCaption
+{
+	background-color: darken($light, 3%);
+	font-style: italic;
+	padding: 0.25rem;
+	margin-bottom: 0;
+}
+
+.container-xxl
+{
+	max-width: 1960px;
+}
+
+
+#CfCopyright
+{
+	margin-bottom: $section-space-custom*2;
+	background-color: $ghsvsRed;
+
+	*
+	{
+		color: $light;
+	}
+}
+
+// HTML-CSS-Beispiele.
+.beispielHeadline
+{
+	@extend .text-primary;
+	@extend .h6;
+	border-style: solid;
+	border-width: 2px 0;
+	padding: .5rem 0;
+	margin-top: 1.25rem !important;
+}
+
+// Siehe auch Shortcode ghsvs/beispiel.html.
+.OuterContainer
+{
+	width: 100%;
+	background-color: white;;
+	padding: 0.25rem;
+	border: 1px solid brown;
+	margin-bottom: 0.5rem;
+	.aColumn
+	{
+		background-color: lightgreen;
+		border: 1px solid black;
+	}
+}
+
+.btn-clipboard
+{
+	top: 0;
+
+	// Override BS bullshit
+	display: block;
+}
+
+
+// Sidebar-Offcanvas
+.navbarToggler
+{
+	// Nachdem rechts das TOC ausgeklappt ist, darf der sticky Button größer..
+	@include media-breakpoint-up(lg)
+	{
+		padding: .25rem .75rem;
+		font-size: 1.25rem;
+	}
+	line-height: 1;
+}
+
+.hiddenOnHugo
+{
+	display: none;
+}
+div.iconcontainer
+{
+	min-height: auto !important;
+
+	div.innercontainer
+	{
+		*
+		{
+			font-size: 1rem !important;
+		}
+
+		.svgSpan svg
+		{
+			font-size: 2rem !important;
+		}
+	}
+}
+.nav-link {
+  text-decoration: $link-decoration;
+}
+
+// "Ergibt"-Pfeilchen in Codebeispielen.
+.thatResults
+{
+	font-style: italic;
+	@extend .text-muted;
+	&::before
+	{
+		content: "=>";
+	}
+}
+
+.list-group
+{
+	margin-bottom: $paragraph-margin-bottom;
+}
+
+.nestedList
+{
+	ul
+	{
+		padding-left: 0;
+	}
+
+	&> ul > li
+	{
+		margin-bottom: $paragraph-margin-bottom;
+	}
+
+	&> ul > li > a
+	{
+		@include font-size(1.4rem);
+		font-family: $font-family-custom;
+	}
+
+	&> ul > li > ul
+	{
+		border-left: .25rem solid;
+		border-left-color: $bd-info;
+	}
+
+
+	.hasChildren
+	{
+		margin-bottom: $paragraph-margin-bottom * .5;
+
+		& > a
+		{
+			@include font-size(1.2rem);
+		}
+	}
+
+	padding-left: 0;
+
+	li
+	{
+		display: block;
+	}
+
+	li > ul
+	{
+		padding-left: 1rem;
+	}
+
+
+}
+
+// Topmenü.
+.bd-navbar
+{
+	.dropdown-menu
+	{
+		// Krücke wegen dem sticky-top-Bar direkt unter dem Top-Menü.
+		z-index: ($zindex-fixed + 5);
+	}
+	.dropdown-toggle
+	{
+		cursor: pointer;
+	}
+}
+
+// Meine Krücke für z.B.  &lt;!--more-->, das mit CODE als Entity ausgeg. wird.
+var
+{
+	@extend code;
+	font-style: normal;
+}
+
+// Is a figure.
+.citeGhsvs
+{
+	@extend .bd-callout;
+	@extend .bd-callout-info;
+	background-color: $gray-100;
+
+	figcaption
+	{
+		text-align: left;
+		background-color: transparent;
+	}
+}
+
+// Für blanke <pre> im Markdown direkt eingegeben.
+pre
+{
+	background-color: $code-bg-custom;
+}
+
+#CfButtonGruppe
+{
+	background-color: $green-100;
+	padding: .1rem 0.5rem 0;
+}

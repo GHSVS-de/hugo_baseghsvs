@@ -1,0 +1,37 @@
+.bd-navbar {
+  padding: .75rem 0;
+  // background-color: $bd-purple-bright;
+	background-color: $ghsvsRed;
+  .navbar-toggler {
+    padding: 0;
+    border: 0;
+  }
+
+  .navbar-nav {
+    .nav-link {
+      padding-right: $spacer * .5;
+      padding-left: $spacer * .5;
+      color: rgba($white, .85);
+
+      &:hover,
+      &:focus {
+        color: $white;
+      }
+
+      &.active {
+        font-weight: 600;
+        color: $white;
+      }
+    }
+  }
+
+  .navbar-nav-svg {
+    width: 1rem;
+    height: 1rem;
+  }
+
+	.contactLink
+	{
+		@extend .nav-link;
+	}
+}

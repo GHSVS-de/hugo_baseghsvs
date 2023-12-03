@@ -1,0 +1,33 @@
+$ghsvsRed: #990134;
+$yellow-light: #ffffcc;
+
+// Quasi überschreiben Browser/OS-Defaults
+$font-size-root: 20px; // BS5: null
+
+$displayBackToTopOnMobile: true;
+$enableBackToTop: true;
+$enableBackToTopAutoHide: true;
+$displayBackToTopInHome: true;
+
+$section-space-custom: ($paragraph-margin-bottom * 2);
+$block-space-custom: $paragraph-margin-bottom;
+
+// image, figure and things
+$figure-caption-font-size: $font-size-base;
+$figure-caption-color: $body-color;
+$figure-caption-text-align-custom: center;
+$figure-caption-font-weight-custom: $font-weight-base;
+$figure-caption-line-height-custom: $line-height-base;
+$figure-caption-font-style-custom: italic;
+$figure-caption-bg-custom: $yellow-light;
+$figure-caption-font-family-custom: $font-family-base;
+$figure-max-width: 480px;
+$figure-max-width-sm: 190px;
+$figure-img-max-height-custom: 350px;
+
+// code, pre, kbd and things.
+$code-color: $red;
+$code-bg-custom: #fafbfc;
+$pre-padding-custom: ($spacer * 0.75);
+$kbd-color: $black;
+$kbd-bg: $gray-200;
